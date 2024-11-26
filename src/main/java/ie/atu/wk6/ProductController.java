@@ -27,6 +27,9 @@ public class ProductController {
     @PostMapping
     public List<Product> newProduct(@RequestBody @Valid Product product){
 
+        ProductService.saveProduct(product);
+
+        System.out.print("Person Saved");
         //send it to do business logic
         //ProductService myService = new ProductService();
         list = myService.addProduct(product);
